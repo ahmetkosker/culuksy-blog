@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const dbConnect = require('./dbConnect')
 
 const blogPostSchema = new Schema({
     blogTitle: String,
@@ -10,8 +11,6 @@ const blogPostSchema = new Schema({
 let blog = mongoose.model('blog', blogPostSchema);
 
 module.exports = blog;
-
-
 
 var pers = new blog({
     blogTitle: 'Title',
