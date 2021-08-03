@@ -1,17 +1,81 @@
-<div class=' mb-10 w-3/4 text-center border-b-4 text-blue-700'>
-    <div class='overflow-hidden'>
-        <img class='hover:scale-110 hover:transition-all hover:duration-700 ease-in-out' src='/images/test.jpg'>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="dist/styles.css">
+</head>
+<body<h1="" cz-shortcut-listen="true">
+    <div class="bg-yellow-300 h-48 mx-auto flex justify-center items-center flex-col">
+        <div class="text-gray-800 font-black sm:text-6xl text-4xl">Ahmet KÖŞKER</div>
+        <div class="sm:text-4xl md: text-gray-800 italic text-2xl">Ahmet KÖŞKER</div>
     </div>
-    <div class='w-3/4 mx-auto p-6 bg-red-800'>
-        <div class='mb-8'>
-            <h1 class='text-5xl'>
-                <%=blogTitle%>
-            </h1>
+    <div class="sm:w-full w-full bg-gray-900 h-auto m-auto">
+        <div class="w-auto">
+            <ul class="text-2xl text-yellow-200 text-center sm:flex justify-end sm:justify-center block">
+                <li class="sm:p-5 p-3 hover:bg-gray-600"><a href=""
+                        class="transition-all hover:text-4xl  hover:text-yellow-400">AHO</a></li>
+                <li class="sm:p-5 p-3 hover:bg-gray-600"><a href=""
+                        class="transition-all hover:text-4xl hover:text-yellow-400">AHO</a></li>
+                <li class="sm:p-5 p-3 hover:bg-gray-600"><a href=""
+                        class="transition-all hover:text-4xl hover:text-yellow-400">AHO</a></li>
+            </ul>
         </div>
+    </div>
+    </div>
+    <div class="sm:w-1/2 mx-auto">
         <div>
-            <h4>
-                <%=blogSummary%>
-            </h4>
+            <div class='mb-10'>
+                <div class='overflow-hidden'>
+                    <img class='hover:scale-110 hover:transition-all hover:duration-700 ease-in-out'
+                        src='/images/test.jpg'>
+                </div>
+                <div class='w-3/4 mx-auto p-6 border-b-4'>
+                    <div class='mb-8 mx-auto'>
+                        <h1 class='text-5xl text-center'>
+                            ${data[i].blogTitle}
+                        </h1>
+                    </div>
+                    <div>
+                        <h4>
+                            ${data[i].blogSummary}
+                        </h4>
+                    </div>
+                    <div>
+                        <a class='text-blue-700' href='index/${data[i]._id}'>
+                            ${data[i]._id}
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+    <div class='mb-10 w-3/4 text-center border-b-4 text-blue-700 '>
+        <div class='overflow-hidden'>
+            <img class='hover:scale-110 hover:transition-all hover:duration-700 ease-in-out' src='/images/test.jpg'>
+        </div>
+        <div class='w-3/4 mx-auto p-6 bg-red-800'>
+            <div class='mb-8'>
+                <h1 class='text-5xl'>
+                    <%=blogTitle%>
+                </h1>
+            </div>
+            <div>
+                <h4>
+                    <%=blogSummary%>
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class='w-5/6 text-center mx-auto'>
+        <div>
+            <div class='h-20 mt-5 text-5xl'>
+                ${data.blogTitle}
+            </div>
+            <div class='text-2xl text-red-700'>
+                ${data.blogContent}
+            </div>
+        </div>
+    </div>
+    </body>
+
+</html>
