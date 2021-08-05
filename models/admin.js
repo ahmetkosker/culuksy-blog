@@ -22,26 +22,40 @@ adminSchema.pre('save', async function (next) {
     next()
 })
 
-const admin = new mongoose.model('admin', adminSchema)
+const Admin = new mongoose.model('Admin', adminSchema)
 
 
-var ahmet = new admin({
-    adminName: 'aho',
-    adminPassword: '123'
-})
+// var ahmet = new admin({
+//     adminName: 'aho',
+//     adminPassword: '123'
+// })
 
-ahmet.save(function (error) {
-    if (!error) {
-        console.log('admin kayıt edildi')
+// ahmet.save(function (error) {
+//     if (!error) {
+//         console.log('admin kayıt edildi')
+//     }
+//     else {
+//         console.log('hata')
+//     }
+// })
+
+adminSchema.statics.login = async function (adminName, adminPassword) {
+    var admin = await this.findOne(adminName)
+    if (admin) {
+        var auth = await bcrypt.compare(adminPassword, admin.adminPassword)
+        if (auth) {
+            return admin
+        }
+        else {
+            throw Error('parola hatası')
+        }
     }
     else {
-        console.log('hata')
+        throw Error('admin bulunamadı')
     }
-})
-
-adminSchema.static.login = function () {
-    
 }
+
+module.exports = Admin
 
 
 

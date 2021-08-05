@@ -20,6 +20,10 @@ app.get('/', function (request, response) {
     response.render('main-page');
 })
 
+app.get('/adminPage', function(request, response){
+    response.render('adminPage')
+})
+
 app.get('/main', function (request, response) {
     response.render('main');
 })

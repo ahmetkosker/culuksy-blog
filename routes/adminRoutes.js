@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const blog = require('../models/database.js')
+const dbConnect = require('../models/admin')
 const adminController = require('../controller/adminController')
 const bodyParser = require('body-parser')
 
