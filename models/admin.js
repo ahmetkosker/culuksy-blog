@@ -39,21 +39,21 @@ const Admin = new mongoose.model('Admin', adminSchema)
 //     }
 // })
 
-adminSchema.statics.login = async function (adminName, adminPassword) {
-    var admin = await this.findOne(adminName)
-    if (admin) {
-        var auth = await bcrypt.compare(adminPassword, admin.adminPassword)
-        if (auth) {
-            return admin
-        }
-        else {
-            throw Error('parola hatası')
-        }
-    }
-    else {
-        throw Error('admin bulunamadı')
-    }
-}
+// adminSchema.statics.login = async function (adminName, adminPassword) {
+//     var admin = await this.findOne(adminName)
+//     if (admin) {
+//         var auth = await bcrypt.compare(adminPassword, admin.adminPassword)
+//         if (auth) {
+//             return admin
+//         }
+//         else {
+//             throw Error('parola hatası')
+//         }
+//     }
+//     else {
+//         throw Error('admin bulunamadı')
+//     }
+// }
 
 module.exports = Admin
 

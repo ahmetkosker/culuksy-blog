@@ -1,6 +1,11 @@
-const dbConnect = require('../models/admin')
-const bcrypt = require('bcrypt')
 const Admin = require('../models/admin')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+
+const maxAge = 60 * 60 * 24 * 1000;
+const createToken = function (id) {
+    return jwt.sign({ id }, 'ahmet baba', { expiresIn: maxAge });
+}
 
 const admin_login_get = function (request, response) {
     response.render('../views/admin_login')
@@ -12,17 +17,24 @@ const admin_login_post = async function (request, response) {
     Admin.findOne({ adminName: name }, async function (error, data) {
         if (!error) {
             if (data) {
+                const adminID = data._id;
                 const adminName = data.adminName;
                 const adminPassword = data.adminPassword;
                 const auth = await bcrypt.compare(pas, adminPassword)
-                if(auth){
+                if (auth) {
+                    const token = createToken(adminID)
+                    response.cookie('jwt', token, {
+                        maxAge: maxAge,
+                        httpOnly: true,
+                        secure: true
+                    })
                     response.redirect('/adminPage')
                 }
-                else{
+                else {
                     console.log('wrong pass')
                 }
             }
-            else{
+            else {
                 console.log('admin not found')
             }
         }
