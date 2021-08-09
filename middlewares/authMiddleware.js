@@ -6,7 +6,7 @@ const requireAuth = function (request, response, next) {
         jwt.verify(aho, 'ahmet baba', function (err, decodedToken) {
             if (err) {
                 console.log(err)
-                response.redirect('/admin_login')
+                response.redirect('/adminLogin')
             }
             else {
                 next()
@@ -14,7 +14,8 @@ const requireAuth = function (request, response, next) {
         })
     }
     else {
-        response.redirect('/admin_login')
+        response.redirect('/adminLogin')
+        next()
     }
 }
 

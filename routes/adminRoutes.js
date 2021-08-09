@@ -6,7 +6,8 @@ const bodyParser = require('body-parser')
 
 var urlEncodedParser = bodyParser.urlencoded()
 
-router.get('/', urlEncodedParser, adminController.admin_login_get)
-router.post('/', adminController.admin_login_post)
+router.get('/', urlEncodedParser, adminController.adminLogin_get)
+router.post('/', adminController.adminLogin_post)
+router.get('/ahoPanel/create/blog', adminController.createBlog)
 
 module.exports = router

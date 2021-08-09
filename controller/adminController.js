@@ -7,11 +7,11 @@ const createToken = function (id) {
     return jwt.sign({ id }, 'ahmet baba', { expiresIn: maxAge });
 }
 
-const admin_login_get = function (request, response) {
-    response.render('../views/admin_login')
+const adminLogin_get = function (request, response) {
+    response.render('../views/adminLogin')
 }
 
-const admin_login_post = async function (request, response) {
+const adminLogin_post = async function (request, response) {
     var name = request.body.adminName;
     var pas = request.body.adminPassword;
     Admin.findOne({ adminName: name }, async function (error, data) {
@@ -28,7 +28,7 @@ const admin_login_post = async function (request, response) {
                         httpOnly: true,
                         secure: true
                     })
-                    response.redirect('/adminPage')
+                    response.redirect('/ahoPanel')
                 }
                 else {
                     console.log('wrong pass')
@@ -44,7 +44,12 @@ const admin_login_post = async function (request, response) {
     })
 }
 
+const createBlog = function (request, response) {
+    response.send('../views/createBlog')
+}
+
 module.exports = {
-    admin_login_get,
-    admin_login_post
+    adminLogin_get,
+    adminLogin_post,
+    createBlog
 }

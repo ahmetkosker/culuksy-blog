@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/dist/styles.css'>
+    <title>Create Blog</title>
+</head>
+
+<body>
+    <form method='POST' action='/ahoPanel/create/blog'>
+        <!-- <label for='blogPhoto'>Select Photo:</label>
+        <input type='file' name='test' id='test'> -->
+        <label for='blogPhoto'>blogTitle:</label>
+        <input type='text' name='blogTitle' id='blogTitle'>
+        <label for='blogPhoto'>blogSummary:</label>
+        <textarea rows='4' cols='50' name='blogSummary' id='blogSummary'></textarea>
+        <label for='blogPhoto'>blogContent:</label>
+        <textarea rows='4' cols='50' name='blogContent' id='blogContent'></textarea>
+        <input type='submit'>
+    </form>
+</body>
+
+</html>
