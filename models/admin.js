@@ -24,21 +24,6 @@ adminSchema.pre('save', async function (next) {
 
 const Admin = new mongoose.model('Admin', adminSchema)
 
-
-// var ahmet = new admin({
-//     adminName: 'aho',
-//     adminPassword: '123'
-// })
-
-// ahmet.save(function (error) {
-//     if (!error) {
-//         console.log('admin kayıt edildi')
-//     }
-//     else {
-//         console.log('hata')
-//     }
-// })
-
 // adminSchema.statics.login = async function (adminName, adminPassword) {
 //     var admin = await this.findOne(adminName)
 //     if (admin) {

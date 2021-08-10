@@ -7,8 +7,12 @@ const index_show_blogs = function (request, response) {
             console.log('error')
         }
         else {
-            for (var i = 0; i < data.length; i++) {
-                html = html + `<div class="sm:w-1/2 mx-auto">
+            if (data.length === 0) {
+                html = html + `<div class='p-10'><h1 class='text-center text-red-800'>Henüz Blog Eklenmemiş</h1><div></body></html>`;
+            } 
+            else {
+                for (var i = 0; i < data.length; i++) {
+                    html = html + `<div class="sm:w-1/2 mx-auto">
                 <div>
                     <div class='mb-10'>
                         <div class='overflow-hidden'>
@@ -16,27 +20,25 @@ const index_show_blogs = function (request, response) {
                                 src='/images/test.jpg'>
                         </div>
                         <div class='w-3/4 mx-auto p-6 border-b-4'>
+                        <a class='text-yellow-700' href='index/${data[i]._id}'>
                             <div class='mb-8 mx-auto'>
                                 <h1 class='text-5xl text-center'>
                                     ${data[i].blogTitle}
                                 </h1>
                             </div>
+                        </a>
                             <div>
-                                <h4>
+                                <h4 class='text-center'>
                                     ${data[i].blogSummary}
                                 </h4>
-                            </div>
-                            <div>
-                                <a class='text-blue-700' href='index/${data[i]._id}'>
-                                    ${data[i]._id}
-                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>`;
-                if (i === data.length - 1) {
-                    html = html + '</body></html>'
+                    if (i === data.length - 1) {
+                        html = html + '</body></html>'
+                    }
                 }
             }
             response.writeHead(200, { 'Content-Type': 'text/html' })

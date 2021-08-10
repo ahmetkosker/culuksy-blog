@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken')
 
 const requireAuth = function (request, response, next) {
-    var aho = request.cookies.jwt
-    if (aho) {
-        jwt.verify(aho, 'ahmet baba', function (err, decodedToken) {
+    var admin = request.cookies.jwt
+    if (admin) {
+        jwt.verify(admin, 'exarons', function (err, decodedToken) {
             if (err) {
                 console.log(err)
                 response.redirect('/adminLogin')

@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 
 const maxAge = 60 * 60 * 24 * 1000;
 const createToken = function (id) {
-    return jwt.sign({ id }, 'ahmet baba', { expiresIn: maxAge });
+    return jwt.sign({ id }, 'exarons', { expiresIn: maxAge });
 }
 
 const adminLogin_get = function (request, response) {

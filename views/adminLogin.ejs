@@ -1,24 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/dist/styles.css'>
-    <title>Admin Login</title>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel='stylesheet' href='/dist/styles.css'>
+  <title>Admin Login</title>
 </head>
 
-<body>
-    <div>
-        <form action='/adminLogin' method='POST'>
-          <label for="adminName">Name</label>
-          <input type="text" id="adminName" name="adminName" placeholder="Your name..">
-          <label for="adminPassword">Password</label>
-          <input type="text" id="adminPassword" name="adminPassword" placeholder="Your last name..">
-          <input type="submit" value="Submit">
-        </form>
-      </div>
+<style>
+  html {
+    height: 100%;
+  }
+</style>
+
+<body class='h-full bg-gradient-to-r from-black via-gray-700 to-black'>
+  <div class='absolute text-purple-500 font-bold text-4xl p-14 sm:pl-52'>
+    <i class="far fa-user-shield">AhoPanel</i>
+  </div>
+  <div class='w-full mx-auto h-full text-purple-500 '>
+    <div class='w-3/4 mx-auto pt-52 sm:w-1/3'>
+      <form action='/adminLogin' method='POST'>
+        <div class='bg-transparent rounded-3xl'>
+          <label class='font-bold text-3xl p-3 text-purple-500 sm:text-5xl'>Log in</label>
+          <div class='text-center font-medium p-5 text-xl'>
+            <label for='adminName'>Admin Name</label>
+            <div class="">
+              <input
+                class='rounded-sm mt-3 w-full outline-none h-12 bg-transparent border-b-2 border-purple-200 focus:border-purple-700 placeholder-purple-500 placeholder-opacity-70'
+                type='text' id='adminName' name='adminName' placeholder='Your name..'>
+            </div>
+          </div>
+          <div class='text-center font-medium p-5 text-xl'>
+            <label for='adminName'>Password</label>
+            <div class="">
+              <input
+                class='rounded-sm mt-3 w-full outline-none h-12 bg-transparent border-b-2 border-purple-200 focus:border-purple-700 placeholder-purple-500 placeholder-opacity-70'
+                type='password' id='adminPassword' name='adminPassword' placeholder='Your password..'>
+            </div>
+          </div>
+          <div class='text-center p-5 text-xl'>
+            <input class='w-full rounded-full bg-purple-800 text-white p-2' type='submit' value='Log In'>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 
 </html>
