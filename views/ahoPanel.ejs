@@ -1,21 +1,67 @@
 <!DOCTYPE html>
-<html lang="en" class='w-full'>
+<html lang="en" class='w-full h-full'>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel='stylesheet' href='/dist/styles.css'>
     <title>AhoPanel</title>
 </head>
 
-<body class='w-full'>
-    <div class='w-full bg-gradient-to-r from-red-500 via-gray-600 to-blue-500'>
+<body class='w-full h-full'>
+    <div class='w-full sm:w-1/2 h-full bg-rhino-400 inline-block float-left'>
         <div>
-            <a href='/ahoPanel/create/blog'>Add a blog</a>
-            <a href='/'>Main Page</a>
+            <div class='bg-rhino-500'>
+                <h2 class='w-full text-left text-white p-3 text-3xl font-bold'><i class="fas fa-bolt mr-3"></i>ahoPanel
+                </h2>
+            </div>
+            <div class='m-2'>
+                <img src='https://scontent.fyei6-4.fna.fbcdn.net/v/t1.6435-9/218449477_4847307238617270_1287644871741301396_n.jpg?_nc_cat=110&ccb=1-4&_nc_sid=09cbfe&_nc_ohc=lcJJOeC-E_QAX_Eq-Du&tn=68eqopZXjWFHxt1A&_nc_ht=scontent.fyei6-4.fna&oh=16869766d5a288f8e12bbcc190fae3f0&oe=613B916C'
+                    class='rounded-full w-16 h-16 border-2 border-white inline-block'>
+                <h2 class='inline-block text-white ml-2'>
+                    <%=adminName%><a href='exit'><i class="fas fa-sign-out-alt ml-4"></i></a>
+                </h2>
+            </div>
+            <a href='#' id='hambMenu' class='absolute right-1 sm:right-1/2'>
+                <div class='text-4xl'><i class="fal fa-window-close text-red-700"></i></div>
+            </a>
+            <div class='h-32 text-white bg-rhino-600 shadow-inner transition-all duration-1000 opacity-100 visible'>
+                <div class='p-2'>
+                    <a class="text-2xl" href='/ahoPanel/create/blog'><i
+                            class="fas fa-plus-square mr-2 text-cyan-300"></i>Add a
+                        blog</a>
+                </div>
+                <div class='p-2'>
+                    <a class="text-2xl" href=''><i class="fal fa-trash-alt mr-2 text-red-700"></i>Delete a
+                        blog</a>
+                </div>
+            </div>
         </div>
     </div>
+    <div class='sm:w-1/2 sm:h-full hidden sm:inline-block '>
+        <img class="w-full h-full"
+            src='https://scontent.fyei6-4.fna.fbcdn.net/v/t1.6435-9/218449477_4847307238617270_1287644871741301396_n.jpg?_nc_cat=110&ccb=1-4&_nc_sid=09cbfe&_nc_ohc=lcJJOeC-E_QAX_Eq-Du&tn=68eqopZXjWFHxt1A&_nc_ht=scontent.fyei6-4.fna&oh=16869766d5a288f8e12bbcc190fae3f0&oe=613B916C'>
+
+    </div>
 </body>
+
+<script>
+    var test = document.getElementById('hambMenu')
+    test.addEventListener('click', function () {
+        if (test.nextElementSibling.classList.contains('visible')) {
+            test.nextElementSibling.classList.replace('opacity-100', 'opacity-0')
+            test.nextElementSibling.classList.replace('visible', 'invisible')
+            test.innerHTML = `<div class='text-4xl'><i class="fal fa-plus-square text-cyan-300"></i></div>`
+        }
+        else {
+            test.nextElementSibling.classList.replace('opacity-0', 'opacity-100')
+            test.nextElementSibling.classList.replace('invisible', 'visible')
+            test.innerHTML = `<div class='text-4xl'><i class="fal fa-window-close text-red-700"></i></div>`
+        }
+    })
+</script>
 
 </html>

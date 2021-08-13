@@ -48,8 +48,14 @@ const createBlog = function (request, response) {
     response.send('../views/createBlog')
 }
 
+const adminLogout = function (request, response) {
+    response.clearCookie('jwt');
+    response.redirect('/adminLogin')
+}
+
 module.exports = {
     adminLogin_get,
     adminLogin_post,
-    createBlog
+    createBlog,
+    adminLogout
 }

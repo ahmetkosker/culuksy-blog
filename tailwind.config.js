@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   mode: 'jit',
   purge: ['./views/**'],
@@ -6,6 +8,32 @@ module.exports = {
     extend: {},
   },
   theme: {
+    colors: {
+      'rhino': {
+        '50': '#f5f6f7',
+        '100': '#ebecef',
+        '200': '#ced0d8',
+        '300': '#b0b3c1',
+        '400': '#747b92',
+        '500': '#394263',
+        '600': '#333b59',
+        '700': '#2b324a',
+        '800': '#22283b',
+        '900': '#1c2031'
+      },
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.trueGray,
+      indigo: colors.indigo,
+      red: colors.red,
+      yellow: colors.amber,
+      green: colors.green,
+      blue: colors.blue,
+      cyan: colors.cyan,
+      purple: colors.purple
+    },
     maxWidth: {
       '1/4': '25%',
       '1/2': '50%',
@@ -35,10 +63,11 @@ module.exports = {
       '1/2': '50%',
       '3/4': '75%',
       'full': '100%',
-    }
+    },
   },
   variants: {
     extend: {},
+    animation: ['responsive', 'motion-safe', 'motion-reduce']
   },
   plugins: [],
 }
