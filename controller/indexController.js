@@ -17,7 +17,7 @@ const index_show_blogs = function (request, response) {
                     <div class='mb-10'>
                         <div class='overflow-hidden'>
                             <img class='hover:scale-110 hover:transition-all hover:duration-700 ease-in-out'
-                                src='/images/test.jpg'>
+                                src='/images/${data[i].blogImage}'>
                         </div>
                         <div class='w-3/4 mx-auto p-6 border-b-4'>
                         <a class='text-yellow-700' href='index/${data[i]._id}'>

@@ -10,14 +10,32 @@
 </head>
 
 <body>
-    <form method='POST' action='/ahoPanel/create/blog'>
-        <label for='blogPhoto'>blogTitle:</label>
-        <textarea rows='4' cols='50' name='blogTitle' id='blogTitle'></textarea>
-        <label for='blogPhoto'>blogSummary:</label>
-        <textarea rows='4' cols='50' name='blogSummary' id='blogSummary'></textarea>
-        <label for='blogPhoto'>blogContent:</label>
-        <textarea rows='4' cols='50' name='blogContent' id='blogContent'></textarea>
-        <input type='submit'>
+    <form method='POST' enctype='multipart/form-data' action='/ahoPanel/create/blog'>
+        <div class='text-3xl'>
+            <div>
+                <label for='blogTitle' class='block text-center m-6 border-b-4 border-indigo-300'>Blog Title:</label>
+                <textarea rows='4' cols='50' name='blogTitle' id='blogTitle'
+                    class='block w-1/3 mx-auto border-2 border-rhino-900 rounded-md'></textarea>
+            </div>
+            <div>
+                <label for='blogSummary' class='block text-center m-6'>Blog Summary:</label>
+                <textarea rows='4' cols='50' name='blogSummary' id='blogSummary'
+                    class='block w-1/3 mx-auto border-2 border-rhino-900'></textarea>
+            </div>
+            <div>
+                <label for='blogContent' class='block text-center m-6'>Blog Content:</label>
+                <textarea rows='4' cols='50' name='blogContent' id='blogContent'
+                    class='block w-1/3 mx-auto border-2 border-rhino-900'></textarea>
+            </div>
+            <div>
+                <label for='blogImage' class='block text-center m-6'>Blog Image:</label>
+                <input type='file' name='blogImage' id='blogImage'
+                    class='block w-1/3 mx-auto border-2 border-rhino-900'></input>
+            </div>
+            <div>
+                <input class='block w-1/4 mx-auto m-6 text-yellow-500 bg-cyan-500 rounded-md' type='submit' value='Save'>
+            </div>
+        </div>>
     </form>
 </body>
 
