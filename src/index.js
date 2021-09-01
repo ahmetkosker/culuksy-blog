@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser')
 const fileUpload = require('express-fileupload')
 
 const app = express()
-app.listen(8080)
+app.listen(2000)
 app.use(express.json())
 
 app.use(express.static('public'))
@@ -24,6 +24,10 @@ app.use(cookieParser())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get('/test', function (request, response) {
+    response.render('test1')
+})
 
 app.use('/index', indexRoutes)
 app.use('/adminLogin', adminRoutes)

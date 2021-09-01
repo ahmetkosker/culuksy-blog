@@ -9,8 +9,6 @@ const createToken = function (id) {
 
 const adminLogin_get = function (request, response) {
     response.render('../views/adminLogin')
-    var name = request.query.name;
-    console.log(name)
 }
 
 const adminLogin_post = async function (request, response) {

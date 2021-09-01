@@ -6,8 +6,10 @@ const bodyParser = require('body-parser')
 
 var urlEncodedParser = bodyParser.urlencoded()
 
-router.get('/', requireAuth, panelController.adminPermission)
-router.get('/create/blog', requireAuth, panelController.createBlog_get)
+router.use(requireAuth)
+
+router.get('/', panelController.adminPermission)
+router.get('/create/blog',  panelController.createBlog_get)
 router.post('/create/blog', panelController.createBlog_post)
 router.get('/delete/blog', panelController.deleteBlog_get)
 router.delete('/delete/blog', urlEncodedParser, panelController.deleteBlog_delete)
