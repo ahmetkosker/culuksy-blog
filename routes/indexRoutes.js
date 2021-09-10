@@ -8,6 +8,6 @@ router.get('/', indexController.showBlogs)
 
 router.get('/:id', indexController.showBlogPage)
 
-router.post('/:id/comments/:commentId', indexController.toke)
+router.post('/:id', indexController.commentSave)
 
 module.exports = router

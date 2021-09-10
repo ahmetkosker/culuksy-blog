@@ -25,11 +25,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/test', function (request, response) {
-    response.render('test1')
-})
 
-app.use('/index', indexRoutes)
+app.use('/showBlogs', indexRoutes)
 app.use('/adminLogin', adminRoutes)
 app.use('/ahoPanel', panelRoutes)
 app.use(function (request, response) {
