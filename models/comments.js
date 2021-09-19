@@ -4,17 +4,17 @@ const moment = require('moment')
 
 
 const blogCommentSchema = new mongoose.Schema({
-    blogId: { type: String, require: true },
-    userName: { type: String, require: true },
+    blogId: { type: String, required: true },
+    userName: { type: String, required: true },
     userComment: { type: String, required: true },
-    created: { type: String, require: true },
+    created: { type: String, required: true },
 })
 
-blogCommentSchema.pre('save', function (next) {
-    this.created = moment().format('lll');
+// blogCommentSchema.pre('save', function (next) {
+//     this.created = new Date();
 
-    next();
-})
+//     next();
+// })
 
 var Comment = mongoose.model('Comment', blogCommentSchema)
 

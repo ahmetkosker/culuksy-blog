@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Admin = require('../models/admin')
-const adminController = require('../controller/adminController')
+const adminController = require('../controllers/adminController')
 const bodyParser = require('body-parser')
 
 var urlEncodedParser = bodyParser.urlencoded()

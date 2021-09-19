@@ -3,10 +3,10 @@ const Schema = mongoose.Schema
 const dbConnect = require('./dbConnect')
 
 const blogPostSchema = new Schema({
-    blogTitle: { type: String, require: true },
-    blogSummary: { type: String, require: true },
-    blogContent: { type: String, require: true },
-    blogImage: { type: String, require: true },
+    blogTitle: { type: String, required: true },
+    blogSummary: { type: String, required: true },
+    blogContent: { type: String, required: true },
+    blogImage: { type: String, required: true, unique: true },
 });
 
 let blog = mongoose.model('blog', blogPostSchema);

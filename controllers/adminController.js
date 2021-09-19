@@ -18,7 +18,6 @@ const adminLogin_post = async function (request, response) {
         if (!error) {
             if (data) {
                 const adminID = data._id;
-                const adminName = data.adminName;
                 const adminPassword = data.adminPassword;
                 const auth = await bcrypt.compare(pas, adminPassword)
                 if (auth) {
@@ -26,7 +25,6 @@ const adminLogin_post = async function (request, response) {
                     response.cookie('jwt', token, {
                         maxAge: maxAge,
                         httpOnly: true,
-                        secure: true
                     })
                     response.redirect('/ahoPanel')
                 }

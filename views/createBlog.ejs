@@ -5,35 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel='stylesheet' href='/dist/styles.css'>
     <title>Create Blog</title>
 </head>
 
-<body>
+<body class='bg-black'>
     <form method='POST' enctype='multipart/form-data' action='/ahoPanel/create/blog'>
-        <div class='text-3xl'>
+        <div class='text-3xl text-purple-600'>
             <div>
-                <label for='blogTitle' class='block text-center m-6 border-b-4 border-indigo-300'>Blog Title:</label>
+                <label class='block text-center m-6'>Blog Title</label>
                 <textarea rows='4' cols='50' name='blogTitle' id='blogTitle'
-                    class='block w-1/3 mx-auto border-2 border-rhino-900 rounded-md'></textarea>
+                    class='block w-1/3 mx-auto border-2 border-purple-600 rounded-md bg-gray-600 text-red-400'></textarea>
             </div>
             <div>
-                <label for='blogSummary' class='block text-center m-6'>Blog Summary:</label>
+                <label class='block text-center m-6'>Blog Summary</label>
                 <textarea rows='4' cols='50' name='blogSummary' id='blogSummary'
-                    class='block w-1/3 mx-auto border-2 border-rhino-900'></textarea>
+                    class='block w-1/3 mx-auto border-2 border-purple-600 rounded-md bg-gray-600 text-red-400'></textarea>
             </div>
             <div>
-                <label for='blogContent' class='block text-center m-6'>Blog Content:</label>
+                <label class='block text-center m-6'>Blog Content</label>
                 <textarea rows='4' cols='50' name='blogContent' id='blogContent'
-                    class='block w-1/3 mx-auto border-2 border-rhino-900'></textarea>
+                    class='block w-1/3 mx-auto border-2 border-purple-600 rounded-md bg-gray-600 text-red-400'></textarea>
             </div>
             <div>
-                <label for='blogImage' class='block text-center m-6'>Blog Image:</label>
-                <input type='file' name='blogImage' id='blogImage'
-                    class='block w-1/3 mx-auto border-2 border-rhino-900'></input>
+                <label class='block text-center m-6'>Blog Image</label>
+                <label for='blogImage'
+                    class='block mx-auto text-center w-1/4 p-10 bg-indigo-50 rounded-sm cursor-pointer hover:bg-purple-600 hover:text-rhino-50 transition-all duration-200'>
+                    <span class='text-2xl font-light'>Select a file</span>
+                    <input type='file' name='blogImage' id='blogImage'
+                        class='hidden w-1/3 mx-auto border-2 border-rhino-900'>
+                    </input>
+                </label>
             </div>
             <div>
-                <input class='block w-1/4 mx-auto m-6 text-yellow-500 bg-cyan-500 rounded-md' type='submit' value='Save'>
+                <label>
+                    <input class='block w-1/4 mx-auto m-6 text-yellow-500 bg-cyan-500 rounded-md' type='submit'
+                        value='Save Blog'>
+                </label>
             </div>
         </div>>
     </form>

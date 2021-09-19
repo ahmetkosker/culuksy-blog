@@ -1,6 +1,8 @@
 const blog = require('../models/database')
 const Comment = require('../models/comments')
 const alert = require('alert')
+const moment = require('moment')
+const crypto = require('crypto')
 
 const showBlogs = function (request, response) {
     blog.find({}, function (error, data) {
@@ -38,7 +40,8 @@ const commentSave = async function (request, response) {
     const comment = new Comment({
         blogId: blogId,
         userName: body.userName,
-        userComment: body.userComment
+        userComment: body.userComment,
+        created: moment().format('lll')
     })
     const savePromise = new Promise(function (resolve, reject) {
         comment.save(function (error) {

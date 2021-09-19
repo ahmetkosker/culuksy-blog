@@ -3,6 +3,8 @@ const Admin = require('../models/admin')
 const jwt = require('jsonwebtoken')
 const path = require('path')
 const fs = require('fs')
+const Comment = require('../models/comments')
+const alert = require('alert')
 const fileUpload = require('express-fileupload')
 
 const adminPermission = function (request, response) {
@@ -82,15 +84,33 @@ const deleteBlog_delete = async function (request, response) {
             }
         })
     });
+    const result = await findOneAndDeleteBlog
     fs.unlink('./public/images/' + blogImageName, (err) => {
         if (err) {
             throw err;
         }
         console.log("Photo is deleted.");
     });
-    const result = await findOneAndDeleteBlog
-    console.log(result)
     response.redirect('/ahoPanel')
+}
+
+const deleteBlogPage_get = function (request, response) {
+    const id = request.params.id;
+    blog.findById(id, function (error, data) {
+        if (!error) {
+            Comment.find({ blogId: id }, function (error, commentData) {
+                if (!error) {
+                    response.render('deleteBlogPage', { data: data, commentData: commentData, id: id });
+                }
+                else {
+                    console.log(error, 'error')
+                }
+            })
+        }
+        else {
+            console.log(error)
+        }
+    })
 }
 
 const exit = function (request, response) {
@@ -104,6 +124,7 @@ module.exports = {
     createBlog_post,
     deleteBlog_get,
     deleteBlog_delete,
+    deleteBlogPage_get,
     exit
 }
 

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const blog = require('../models/database.js')
-const indexController = require('../controller/indexController')
+const indexController = require('../controllers/indexController')
 
 
 router.get('/', indexController.showBlogs)

@@ -1,7 +1,7 @@
 const express = require('express')
-const indexRoutes = require('../routes/indexRoutes')
-const adminRoutes = require('../routes/adminRoutes')
-const panelRoutes = require('../routes/panelRoutes')
+const indexRoutes = require('../routers/indexRoutes')
+const adminRoutes = require('../routers/adminRoutes')
+const panelRoutes = require('../routers/panelRoutes')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const fileUpload = require('express-fileupload')
@@ -15,7 +15,7 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs')
 
 app.get('/', function (request, response) {
-    response.render('main-page');
+    response.render('main-page');w
 })
 
 app.use(fileUpload())
