@@ -13,13 +13,19 @@ const adminSchema = new mongoose.Schema({
     adminPassword: {
         type: String,
         required: true
+    },
+    adminEmail: {
+        type: String,
+        required: true,
+        trim: true,
+        uniqe: true
     }
 })
 
 adminSchema.pre('save', async function (next) {
     const salt = await bcrypt.genSalt()
     this.adminPassword = await bcrypt.hash(this.adminPassword, salt)
-    next()
+    next();
 })
 
 const Admin = new mongoose.model('Admin', adminSchema)

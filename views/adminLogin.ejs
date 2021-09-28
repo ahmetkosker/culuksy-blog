@@ -12,25 +12,41 @@
 </head>
 
 <style>
+  .border-animate:focus {
+    animation-name: border-animate;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes border-animate {
+    from {
+      border-color: white;
+    }
+
+    to {
+      border-color: rgba(126, 34, 206);
+    }
+  }
+
   html {
     height: 100%;
   }
 </style>
 
 <body class='h-full bg-gradient-to-r bg-black'>
-  <div class='absolute text-purple-500 font-bold text-4xl p-14 sm:pl-52'>
+  <div class='absolute text-purple-600 font-bold text-4xl p-14 sm:pl-52'>
     <i class="far fa-user-shield">AhoPanel</i>
   </div>
-  <div class='w-full mx-auto h-full text-purple-500 '>
+  <div class='w-full mx-auto h-full text-purple-600 '>
     <div class='w-3/4 mx-auto pt-52 sm:w-1/3'>
       <form action='/adminLogin' method='POST'>
         <div class='bg-transparent rounded-3xl'>
-          <label class='font-bold text-3xl p-3 text-purple-500 sm:text-5xl'>Log in</label>
-          <div class='text-center font-medium p-5 text-xl'>
+          <label class='font-bold text-3xl p-3 text-purple-600 sm:text-5xl'>Log in</label>
+          <div class='text-center font-medium p-5 text-xl '>
             <label for='adminName'>Admin Name</label>
             <div class="">
               <input
-                class='rounded-sm mt-3 w-full outline-none h-12 bg-transparent border-b-2 border-purple-200 focus:border-purple-700 placeholder-purple-500 placeholder-opacity-70'
+                class='border-animate rounded-sm mt-3 w-full outline-none h-12 bg-transparent border-b-2 border-purple-200 focus:border-purple-700 placeholder-purple-500 placeholder-opacity-80'
                 type='text' id='adminName' name='adminName' placeholder='Your name..'>
             </div>
           </div>
@@ -38,7 +54,7 @@
             <label for='adminName'>Password</label>
             <div class="">
               <input
-                class='rounded-sm mt-3 w-full outline-none h-12 bg-transparent border-b-2 border-purple-200 focus:border-purple-700 placeholder-purple-500 placeholder-opacity-70'
+                class='border-animate rounded-sm mt-3 w-full outline-none h-12 bg-transparent border-b-2 border-purple-200 focus:border-purple-700 placeholder-purple-500 placeholder-opacity-80'
                 type='password' id='adminPassword' name='adminPassword' placeholder='Your password..'>
             </div>
           </div>
@@ -47,6 +63,9 @@
           </div>
         </div>
       </form>
+      <a href='./forgotPassword' class='text-purple-500'>
+        Forgot your password?
+      </a>
     </div>
   </div>
 </body>

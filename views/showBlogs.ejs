@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="dist/styles.css">
 </head>
-<body<h1="" cz-shortcut-listen="true">
+<body class='bg-black'>
     <div class="bg-yellow-300 h-48 mx-auto flex justify-center items-center flex-col">
         <div class="text-gray-800 font-black sm:text-6xl text-4xl">Ahmet KÖŞKER</div>
         <div class="sm:text-4xl md: text-gray-800 italic text-2xl">Ahmet KÖŞKER</div>
@@ -24,15 +24,15 @@
     <div>
         <% if (data){ %>
             <%data.forEach(function (data) {%>
-                <div class="sm:w-1/2 mx-auto">
+                <div class="sm:w-1/2 mx-auto text-yellow-700">
                     <div>
                         <div class='mb-10'>
                             <div class='overflow-hidden'>
                                 <img class='hover:scale-110 hover:transition-all hover:duration-700 ease-in-out mx-auto'
                                     src='/images/<%=data.blogImage%>'>
                             </div>
-                            <div class='w-3/4 mx-auto p-6 border-b-4'>
-                                <a class='text-yellow-700' href='/showBlogs/<%=data._id%>'>
+                            <div class='w-3/4 mx-auto p-6 border-b-4 border-green-500'>
+                                <a href='/showBlogs/<%=data._id%>'>
                                     <div class='mb-8 mx-auto'>
                                         <h1 class='text-5xl text-center'>
                                             <%=data.blogTitle%>
