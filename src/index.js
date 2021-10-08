@@ -10,6 +10,7 @@ const dotenv = require('dotenv').config({
     path: './config/env/config.env'
 });
 
+
 const app = express()
 app.listen(2000)
 app.use(express.json())

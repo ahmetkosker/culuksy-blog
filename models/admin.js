@@ -19,6 +19,12 @@ const adminSchema = new mongoose.Schema({
         required: true,
         trim: true,
         uniqe: true
+    },
+    resetPasswordExpires: {
+        type: Date
+    },
+    resetPasswordToken: {
+        type: String
     }
 })
 
@@ -47,11 +53,3 @@ const Admin = new mongoose.model('Admin', adminSchema)
 // }
 
 module.exports = Admin
-
-
-
-
-
-
-
-
